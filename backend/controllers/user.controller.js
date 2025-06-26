@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import getDataUri from "../utils/datauri.js";
 import cloudinary from "../utils/cloudinary.js";
 
+// To Register a User
 export const register = async (req, res) => {
     try {
         const { fullname, email, phoneNumber, password, role } = req.body;
@@ -46,6 +47,8 @@ export const register = async (req, res) => {
         console.log(error);
     }
 }
+
+//To Login The User
 export const login = async (req, res) => {
     try {
         const { email, password, role } = req.body;
@@ -101,6 +104,8 @@ export const login = async (req, res) => {
         console.log(error);
     }
 }
+
+//Logout User
 export const logout = async (req, res) => {
     try {
         return res.status(200).cookie("token", "", { maxAge: 0 }).json({
@@ -111,6 +116,8 @@ export const logout = async (req, res) => {
         console.log(error);
     }
 }
+
+//Update Profile of the User
 export const updateProfile = async (req, res) => {
     try {
         const { fullname, email, phoneNumber, bio, skills } = req.body;
