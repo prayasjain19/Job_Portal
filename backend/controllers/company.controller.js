@@ -2,6 +2,7 @@ import { Company } from "../models/company.model.js";
 import getDataUri from "../utils/datauri.js";
 import cloudinary from "../utils/cloudinary.js";
 
+//To Register Company
 export const registerCompany = async (req, res) => {
     try {
         const { companyName } = req.body;
@@ -32,6 +33,7 @@ export const registerCompany = async (req, res) => {
         console.log(error);
     }
 }
+//To fetch all Company
 export const getCompany = async (req, res) => {
     try {
         const userId = req.id; // logged in user id
@@ -69,6 +71,7 @@ export const getCompanyById = async (req, res) => {
         console.log(error);
     }
 }
+//To Update Company
 export const updateCompany = async (req, res) => {
     try {
         const { name, description, website, location } = req.body;
